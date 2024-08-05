@@ -1,0 +1,85 @@
+body {
+    /* height: 15000px; */
+    color: orange;
+    background-color: black;
+}
+
+.navbar-nav .nav-link {
+    font-weight: bold;
+}
+
+
+/* @media (min-width: 992px) {
+    .navbar-brand {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+} */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 9;
+    padding: 10px 0px;
+}
+
+.txt1 {
+    font-size: 31px;
+}
+
+@media (max-width: 830px) {
+    #introRow {
+        text-align: center;
+    }
+}
+
+#serviceText,
+#aboutusText,
+#hightlightText,
+.txt2 {
+    font-size: 19px;
+}
+
+#learnMore,
+#getStarted {
+    background-color: orange;
+    color: black;
+    font-weight: bold;
+}
+
+#learnMore:hover,
+#getStarted:hover {
+    background-color: white;
+    color: orange;
+}
+
+.txt {
+    color: orange;
+}
+
+.txt:hover {
+    color: rgb(254, 254, 254);
+}
+
+
+/* .abtusTitle {
+    margin-left: 65px;
+} */
+
+hr {
+    background-color: rgba(138, 138, 138, 0.634);
+}
+
+.car_footer {
+    display: flex;
+    column-gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.box {
+    padding: 10px;
+    margin: 5px 0px;
+    border-radius: 10px;
+}
