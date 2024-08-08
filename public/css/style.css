@@ -1,0 +1,42 @@
+/* navbar  */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 9;
+    padding: 10px 0px;
+}
+
+
+/* .navbar-brand {
+    color: rgb(9, 201, 214);
+} */
+
+@media (max-width: 992px) {
+    .navbar .btn {
+        display: none;
+    }
+}
+
+.btn {
+    border: 1px solid rgb(9, 201, 214);
+    color: rgb(9, 201, 214);
+}
+
+.btn:hover {
+    background-color: rgb(9, 201, 214);
+    color: white;
+}
+
+
+/* navbarend  */
+
+.car-image {
+    max-width: 100%;
+    height: auto;
+}
+
+.fa-regular,
+.fa-solid {
+    color: rgb(9, 201, 214);
+}
