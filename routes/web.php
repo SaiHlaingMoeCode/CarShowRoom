@@ -15,3 +15,11 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+
+Route::get('loginPage',function(){
+    return view('auth.login');
+})->name('auth#loginPage');
+
+Route::get('registerPage',function(){
+    return view('auth.register');
+})->name('auth#registerPage');
