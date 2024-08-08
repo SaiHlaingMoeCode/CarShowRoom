@@ -1,4 +1,4 @@
-<x-guest-layout>
+{{-- <x-guest-layout>
     <x-authentication-card>
         <x-slot name="logo">
             <x-authentication-card-logo />
@@ -45,4 +45,49 @@
             </div>
         </form>
     </x-authentication-card>
-</x-guest-layout>
+</x-guest-layout> --}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .login-container {
+        max-width: 400px;
+    }
+</style>
+</head>
+<body>
+    <div class="container mt-3">
+        <div class="login-container border-1 p-4 my-5 mx-auto shadow-lg rounded-5  ">
+            <div class="login-header text-center mb-4 text-white">
+                <img src="{{asset('image/black-convertible-car_53876-64027.avif')}}" style="width: 100px; height: 70px">
+            </div>
+            <form class="mb-4">
+                <div class="mb-3">
+                    <label for="email" class="form-label ">Email address</label>
+                    <input type="email" class="form-control" placeholder="Enter your email">
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label ">Password</label>
+                    <input type="password" class="form-control" placeholder="Enter your password">
+                </div>
+                <button type="submit" class="btn text-white login-btn w-100 mt-2" style="background-color: rgb(9, 201, 214)">Login</button>
+            </form>
+            <div class="text-center mt-3">
+                <small class="">Don't have an account? <a href="{{route('auth#registerPage')}}" style="color: rgb(9, 201, 214)"> Register</a></small>
+            </div>
+            <div class="text-center mt-2">
+                <small><a href="#" class="text-decoration-none" style="color: rgb(9, 201, 214)">Forgotten Password?</a></small>
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
+

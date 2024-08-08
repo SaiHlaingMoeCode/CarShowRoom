@@ -35,8 +35,8 @@
                 </ul>
             </div>
             <div class="d-flex me-3">
-                <a href="" class="btn btn-sm me-2">LOGIN</a>
-                <a href="" class="btn btn-sm">REGISTER</a>
+                <a href="{{route('auth#loginPage')}}" class="btn btn-sm me-2">LOGIN</a>
+                <a href="{{route('auth#registerPage')}}" class="btn btn-sm">REGISTER</a>
             </div>
             <button class="navbar-toggler justify-content-end" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
                 <span class="navbar-toggler-icon"></span>
@@ -64,10 +64,10 @@
                     <a class="nav-link" href="#">Blog</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Login</a>
+                    <a class="nav-link" href="{{route('auth#loginPage')}}">Login</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Register</a>
+                    <a class="nav-link" href="{{route('auth#registerPage')}}">Register</a>
                 </li>
             </ul>
         </div>
