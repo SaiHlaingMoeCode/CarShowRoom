@@ -116,15 +116,15 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
-            .login-container {
+            .register-container {
             max-width: 400px;
         }
     </style>
 </head>
 <body>
     <div class="container mt-3">
-        <div class="login-container border-1 py-4 px-5 my-5 mx-auto shadow-lg rounded-5  ">
-            <div class="login-header text-center mb-4 text-white">
+        <div class="register-container border-1 py-4 px-5 my-5 mx-auto shadow-lg rounded-5  ">
+            <div class="register-header text-center mb-4 ">
                 <img src="{{asset('image/black-convertible-car_53876-64027.avif')}}" style="width: 100px; height: 70px">
             </div>
             <form class="mb-4">

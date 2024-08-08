@@ -64,7 +64,7 @@
 <body>
     <div class="container mt-3">
         <div class="login-container border-1 p-4 my-5 mx-auto shadow-lg rounded-5  ">
-            <div class="login-header text-center mb-4 text-white">
+            <div class="login-header text-center mb-4">
                 <img src="{{asset('image/black-convertible-car_53876-64027.avif')}}" style="width: 100px; height: 70px">
             </div>
             <form class="mb-4">
