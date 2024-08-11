@@ -23,6 +23,7 @@
 
     <!-- Custom styles for this template-->
     <link href="{{ asset('css/sb-admin-2.min.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
 </head>
 
@@ -46,7 +47,7 @@
 
 
             <!-- Divider -->
-            <hr class="sidebar-divider my-0">
+            <hr class="sidebar-divider my-0 ">
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
@@ -209,8 +210,8 @@
                                 <form action="{{ route('logout') }}" method="POST">
                                     @csrf
                                     <a class="dropdown-item mt-3" href="#">
-                                        <button class="w-100 btn btn-primary" type="submit" data-dismiss="modal"><i
-                                                class="fa-solid fa-arrow-right-from-bracket me-2"></i>Logout</button>
+                                        <button class="w-100 btn" type="submit" data-dismiss="modal" style="background-color:  rgb(9, 201, 214); color:white;">
+                                            <i class="fa-solid fa-arrow-right-from-bracket me-2 text-white"></i>Logout</button>
                                     </a>
                                 </form>
 

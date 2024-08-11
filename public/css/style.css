@@ -13,7 +13,8 @@
 } */
 
 @media (max-width: 992px) {
-    .navbar .btn {
+    .navbar .btn,
+    .no-arrow {
         display: none;
     }
 }
@@ -39,4 +40,30 @@
 .fa-regular,
 .fa-solid {
     color: rgb(9, 201, 214);
+}
+
+#userDropdown::after {
+    display: none !important;
+}
+
+.dropdown-menu {
+    left: -100px !important;
+    ;
+}
+
+.dropdown-item:focus,
+.dropdown-item:active,
+.dropdown-item:hover {
+    background-color: transparent !important;
+    color: gray;
+    /* Keep the original text color */
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+
+/* Remove the blue outline */
+
+.dropdown-item:focus-visible {
+    outline: none !important;
 }
