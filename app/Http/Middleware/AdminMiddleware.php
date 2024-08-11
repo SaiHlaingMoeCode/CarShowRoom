@@ -15,7 +15,7 @@ class AdminMiddleware
             return $next($request);
         }
 
-        return redirect('/');  // Redirect to the home page if not an admin
+        return back();  // Redirect to the home page if not an admin
     }
 }
 

@@ -15,7 +15,7 @@ class UserMiddleware
             return $next($request);
         }
 
-        return redirect('/');  // Redirect to the home page if not a user
+        return back();  // Redirect to the home page if not a user
     }
 }
 

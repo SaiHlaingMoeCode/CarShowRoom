@@ -17,17 +17,19 @@ Route::get('register-page', [AuthController::class, 'registerPage'])->name('auth
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->group(function () {
     Route::get('/dashboard', [AuthController::class, 'dashboard'])->name('dashboard');
 
+       // User routes
+       Route::group(['prefix' => 'user'], function () {
+        Route::get('/homePage', [UserController::class, 'home'])->middleware('user')->name('user#home');
+    });
+
+    // Admin routes
+    Route::group(['prefix' => 'admin'], function () {
+        Route::get('/adminPage', [AdminController::class, 'adminPage'])->middleware('admin')->name('admin#dashboard');
+    });
+
 });
 
-    // // User routes
-    // Route::group(['prefix' => 'user'], function () {
-    //     Route::get('/homePage', [UserController::class, 'home'])->name('user#home');
-    // });
 
-    // // Admin routes
-    // Route::group(['prefix' => 'admin'], function () {
-    //     Route::get('/main', [AdminController::class, 'main'])->name('admin#dashboard');
-    // });
 
 
 
