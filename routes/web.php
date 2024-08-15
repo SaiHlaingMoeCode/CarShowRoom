@@ -13,23 +13,27 @@ Route::get('/', [GuestController::class, 'guestHomePage'])->name('guest#homePage
 Route::get('login-page', [AuthController::class, 'loginPage'])->name('auth#loginPage');
 Route::get('register-page', [AuthController::class, 'registerPage'])->name('auth#registerPage');
 
-// Authenticated routes
+
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->group(function () {
     Route::get('/dashboard', [AuthController::class, 'dashboard'])->name('dashboard');
 
-       // User routes
-       Route::group(['prefix' => 'user'], function () {
-        Route::get('/homePage', [UserController::class, 'home'])->middleware('user')->name('user#home');
+    // routes for user
+    Route::middleware(['user'])->group(function () {
+
+        Route::group(['prefix' => 'user'], function () {
+
+            Route::get('/homePage', [UserController::class, 'home'])->name('user#home');
+
+        });
     });
 
-    // Admin routes
-    Route::group(['prefix' => 'admin'], function () {
-        Route::get('/adminPage', [AdminController::class, 'adminPage'])->middleware('admin')->name('admin#dashboard');
-    });
+    //   routes for admin
+    Route::middleware(['admin'])->group(function () {
 
+        Route::group(['prefix' => 'admin'], function () {
+
+            Route::get('/adminPage', [AdminController::class, 'adminPage'])->name('admin#dashboard');
+
+        });
+    });
 });
-
-
-
-
-

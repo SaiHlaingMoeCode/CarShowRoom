@@ -71,20 +71,27 @@
                 @csrf
                 <div class="mb-3">
                     <label for="email" class="form-label ">Email address</label>
-                    <input name="email" type="email" class="form-control" placeholder="Enter your email">
+                    <input name="email" value="{{ old('email') }}" type="email" class="form-control" placeholder="Enter your email">
+                    @error('email')
+                    <small class="text-danger">{{ $message }}</small>
+                    @enderror
                 </div>
                 <div class="mb-3">
                     <label for="password" class="form-label ">Password</label>
                     <input name="password" type="password" class="form-control" placeholder="Enter your password">
+                    @error('password')
+                    <small class="text-danger">{{ $message }}</small>
+                    @enderror
                 </div>
                 <button type="submit" class="btn text-white login-btn w-100 mt-2" style="background-color: rgb(9, 201, 214)">Login</button>
             </form>
             <div class="text-center mt-3">
                 <small class="">Don't have an account? <a href="{{route('auth#registerPage')}}" style="color: rgb(9, 201, 214)"> Register</a></small>
+
             </div>
-                {{-- <div class="text-center mt-2">
-                    <small><a href="#" class="text-decoration-none" style="color: rgb(9, 201, 214)">Forgotten Password?</a></small>
-                </div> --}}
+                <div class="text-center mt-2">
+                     <small><a href="{{route('guest#homePage')}}" style="color: rgb(9, 201, 214)">Go to Home Page</a></small>
+                </div>
         </div>
     </div>
     <!-- Bootstrap JS and dependencies -->

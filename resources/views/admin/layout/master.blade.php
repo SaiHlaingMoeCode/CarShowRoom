@@ -69,14 +69,15 @@
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fa-solid fa-box-open text-dark"></i>
-                    <span class="text-dark">Services</span>
+                    <span class="text-dark">Products</span>
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
 
-                        <a class="collapse-item text-dark" href="">Categories</a>
-                        <a class="collapse-item text-dark" href="">Services List</a>
-                        <a class="collapse-item text-dark" href="">Create Services</a>
+                        <a class="collapse-item text-dark" href="">Car Brand Categories</a>
+                        <a class="collapse-item text-dark" href="">Create Product</a>
+                        <a class="collapse-item text-dark" href="">Product List</a>
+
 
                     </div>
                 </div>
