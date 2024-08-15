@@ -36,8 +36,8 @@
                 </ul>
             </div>
             <div class="d-flex me-3">
-                <a href="{{route('auth#loginPage')}}" class="btn btn-sm me-2">LOGIN</a>
-                <a href="{{route('auth#registerPage')}}" class="btn btn-sm">REGISTER</a>
+                <a href="{{route('auth#loginPage')}}" class="btn-hover btn btn-sm me-2">LOGIN</a>
+                <a href="{{route('auth#registerPage')}}" class="btn-hover btn btn-sm">REGISTER</a>
             </div>
             <button class="navbar-toggler justify-content-end" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
                 <span class="navbar-toggler-icon"></span>
@@ -80,8 +80,8 @@
                 <h1>Perfect Way To Buy And Sell Car On Your Platform</h1>
                 <p>We will help you sell or buy your dream car here easily and quickly that is reliable</p>
                 <div class="d-flex">
-                    <button class="btn btn-sm me-2">Buy Car</button>
-                    <button class="btn btn-sm">Sell Car</button>
+                    <button class="btn-hover btn btn-sm me-2">Buy Car</button>
+                    <button class="btn-hover btn btn-sm">Sell Car</button>
                 </div>
             </div>
             <div class="col-lg-6 text-center">

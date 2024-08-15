@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\GuestController;
+use App\Http\Controllers\CategoryController;
 
 //guest routes
 Route::get('/', [GuestController::class, 'guestHomePage'])->name('guest#homePage');
@@ -34,6 +35,16 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
 
             Route::get('/adminPage', [AdminController::class, 'adminPage'])->name('admin#dashboard');
 
+        });
+
+        //category routes
+        Route::group(['prefix'=>'category'],function(){
+            Route::get('/brandCategories',[CategoryController::class,'brandCategory'])->name('admin#brandCategory');
+            Route::get('/createBrandPage',[CategoryController::class,'createBrandPage'])->name('admin#createBrandPage');
+            Route::post('/createBrand',[CategoryController::class,'createBrand'])->name('admin#createBrand');
+            Route::get('/editBrandPage/{id}',[CategoryController::class,'editBrandPage'])->name('admin#editBrandPage');
+            Route::post('updateBrand',[CategoryController::class,'updateBrand'])->name('admin#updateBrand');
+            Route::get('deleteBrand/{id}',[CategoryController::class,'deleteBrand'])->name('admin#deleteBrand');
         });
     });
 });
