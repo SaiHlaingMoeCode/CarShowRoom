@@ -172,7 +172,7 @@
                 <!-- Topbar -->
                 <nav  class="navbar navbar-expand navbar-light  topbar mb-4 static-top shadow">
 
-                    <h4 style="color: #34495e; font-style: italic;" class="">Hi, {{ Auth::user()->name }}. Weclome back to the dashboard.</h4>
+                    <h4 style="color: #34495e; font-style: italic;" class="m-3"> Hi, {{ Auth::user()->name }}. Weclome back to the dashboard.</h4>
 
                     <!-- Sidebar Toggle (Topbar) -->
                     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">

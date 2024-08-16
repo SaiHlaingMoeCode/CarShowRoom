@@ -13,7 +13,7 @@ class CategoryController extends Controller
 
     //category page
     public function brandCategory(){
-        $categories=Category::orderBy('id','asc')->get();
+        $categories=Category::orderBy('id','asc')->paginate(10);
         return view('admin.category.brandCategories',compact('categories'));
     }
 
@@ -27,7 +27,7 @@ class CategoryController extends Controller
         $this->brandValidationCheck($request);
        $data=$this->getBrandData($request);
        Category::create($data);
-        return redirect()->route('admin#brandCategory');
+        return redirect()->route('admin#brandCategory')->with(['createSuccess'=>'Brand Name Created Successful']);
     }
 
     //edit brand page
@@ -41,13 +41,13 @@ class CategoryController extends Controller
         $this-> updateBrandValidation($request);
         $data=$this->getBrandData($request);
         Category::where('id',$request->categoryId)->update($data);
-        return redirect()->route('admin#brandCategory');
+        return redirect()->route('admin#brandCategory')->with(['updateSuccess'=>'Brand Name Update Successful.']);
     }
 
     //delete brand
     public function deleteBrand($id){
         Category::where('id',$id)->delete();
-        return redirect()->route('admin#brandCategory');
+        return redirect()->route('admin#brandCategory')->with(['deleteSuccess'=>'Brand Name Delete Successful.']);
     }
 
    //Brand validation check

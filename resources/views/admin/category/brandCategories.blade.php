@@ -11,6 +11,30 @@
 <div class="main-content mt-4">
     <div class="section__content section__content--p30">
         <div class="container-fluid">
+            @if (session('createSuccess'))
+            <div class="col-4 offset-8">
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <i class="fa-solid fa-check"></i> {{ session('createSuccess') }}
+                    <a type="" class="btn-close" data-bs-dismiss="alert" aria-label="Close"><i class="fa-regular fa-circle-xmark"></i></a>
+                  </div>
+            </div>
+        @endif
+        @if (session('updateSuccess'))
+        <div class="col-4 offset-8">
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <i class="fa-solid fa-check"></i> {{ session('updateSuccess') }}
+                <a type="" class="btn-close" data-bs-dismiss="alert" aria-label="Close"><i class="fa-regular fa-circle-xmark"></i></a>
+              </div>
+        </div>
+    @endif
+    @if (session('deleteSuccess'))
+    <div class="col-4 offset-8">
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <i class="fa-solid fa-check"></i> {{ session('deleteSuccess') }}
+            <a type="" class="btn-close" data-bs-dismiss="alert" aria-label="Close"><i class="fa-regular fa-circle-xmark"></i></a>
+          </div>
+    </div>
+@endif
             <div class="col-md-12">
                 <!-- DATA TABLE -->
                 <div class="d-flex mb-3">
@@ -18,14 +42,19 @@
                         <div class="">
                             <h4 class="title-1">Brand List</h4>
                         </div>
+
                     </div>
+
                     <div class="col-md-6 offset-4">
+
                         <a href="{{route('admin#createBrandPage')}}">
                             <button class="btn btn-dark text-white">
                                 <i class="fa-solid fa-plus mr-2"></i>Add Brand
                             </button>
                         </a>
+
                     </div>
+
                 </div>
 
                 {{-- search box --}}
@@ -110,9 +139,9 @@
                 </div>
 
                 <!-- END DATA TABLE -->
-                {{-- <div class="mt-2">
-                  {{$categories->appends(request()->query())->links()}}
-                </div> --}}
+                <div class="mt-2">
+                  {{$categories->links('pagination::bootstrap-5')}}
+                </div>
             </div>
         </div>
     </div>

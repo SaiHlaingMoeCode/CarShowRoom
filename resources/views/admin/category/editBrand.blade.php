@@ -20,7 +20,7 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="card-title">
-                                <h3 class="text-center title-2">Edit Your Brand </h3>
+                                <h4 class="text-center title-2">Edit Your Brand </h4>
                             </div>
                             <hr>
                             <form action="{{route('admin#updateBrand')}}" method="post" novalidate="novalidate">
@@ -39,8 +39,8 @@
                                 </div>
 
                                 <div>
-                                    <button type="submit" class="btn btn-lg bg-info btn-block">
-                                        <span class="text-white">Edit</span>
+                                    <button type="submit" class="btn bg-info btn-block">
+                                        <span class="text-white">Update</span>
                                         {{-- <span id="payment-button-sending" style="display:none;">Sending…</span> --}}
                                         <i class="fa-solid fa-circle-right text-white"></i>
                                     </button>
