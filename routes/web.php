@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\GuestController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
 
 //guest routes
@@ -45,6 +46,13 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
             Route::get('/editBrandPage/{id}',[CategoryController::class,'editBrandPage'])->name('admin#editBrandPage');
             Route::post('updateBrand',[CategoryController::class,'updateBrand'])->name('admin#updateBrand');
             Route::get('deleteBrand/{id}',[CategoryController::class,'deleteBrand'])->name('admin#deleteBrand');
+        });
+
+        //Product routes
+        Route::group(['prefix'=>'product'],function(){
+            Route::get('/createProductPage',[ProductController::class,'createProductPage'])->name('admin#createProductPage');
+            Route::post('/createProduct',[ProductController::class,'createProduct'])->name('admin#createProduct');
+            Route::get('/carProduct',[ProductController::class,'carProduct'])->name('admin#carProduct');
         });
     });
 });

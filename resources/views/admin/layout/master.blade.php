@@ -76,8 +76,8 @@
                     <div class="bg-white py-2 collapse-inner rounded">
 
                         <a class="collapse-item text-dark" href="{{route('admin#brandCategory')}}">Car Brand Categories</a>
-                        <a class="collapse-item text-dark" href="">Create Product</a>
-                        <a class="collapse-item text-dark" href="">Product List</a>
+                        <a class="collapse-item text-dark" href="{{route('admin#createProductPage')}}">Create Product</a>
+                        <a class="collapse-item text-dark" href="{{route('admin#carProduct')}}">Product List</a>
 
 
                     </div>
