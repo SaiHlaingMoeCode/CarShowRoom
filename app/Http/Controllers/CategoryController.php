@@ -14,7 +14,7 @@ class CategoryController extends Controller
     //category page
     public function brandCategory(){
         $categories=Category::orderBy('id','asc')->paginate(10);
-        return view('admin.category.brandCategories',compact('categories'));
+        return view('admin.category.list',compact('categories'));
     }
 
     // car category page

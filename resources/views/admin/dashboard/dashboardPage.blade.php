@@ -20,7 +20,7 @@
                             <div class="col mr-2">
                                 <div class="text-xs font-weight-bold text-white text-uppercase mb-1">
                                     Total User</div>
-                                    <div class="h5 mb-0 font-weight-bold text-white">23</div>
+                                    <div class="h5 mb-0 font-weight-bold text-white">{{ count($users) }}</div>
                             </div>
                             <div class="col-auto">
                                 <i style="color: white;" class="fa-solid fa-users fa-2x"></i>

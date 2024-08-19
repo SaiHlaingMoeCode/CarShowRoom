@@ -10,17 +10,17 @@ class Product extends Model
     use HasFactory;
 
     protected $fillable = [
+        'brand_id',
+        'model',
+        'price',
+        'description',
+        'fuel_type',
+        'engine_type',
+        'transmission',
+        'seating_capacity',
         'image1',
         'image2',
         'image3',
         'image4',
-        'car_name',
-        'brand_id',
-        'price',
-        'description',
-        'engine_type',
-        'fuel_type',
-        'transmission',
-        'seating_capacity'
     ];
 }
