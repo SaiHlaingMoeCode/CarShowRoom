@@ -29,14 +29,14 @@
                     <tbody>
                     @foreach ($carlist as $car)
                         <tr class="tr-shadow">
-                            <td>{{$car->image1}}</td>
-                            <td>{{$car->car_name}}</td>
-                            <td>{{$car->price}} $</td>
-                            <td>{{$car->engine_type}}</td>
-                            <td>{{$car->transmission}}</td>
-                            <td>
+                            <td class="align-middle"><img src="{{asset('storage/productsImg/'.$car->image1)}}" style="width: 120px; height: 100px"></td>
+                            <td class="align-middle">{{$car->brand_name}}</td>
+                            <td class="align-middle">$ {{$car->price}} </td>
+                            <td class="align-middle">{{$car->engine_type}}</td>
+                            <td class="align-middle">{{$car->transmission}}</td>
+                            <td class="align-middle">
                                 <div class="table-data-feature d-flex">
-                                    <a href="" class="text-decoration-none">
+                                    <a href="{{route('admin#detailProduct',$car->id)}}" class="text-decoration-none">
                                         <button class="item rounded-circle bg-success px-2 border-0 ml-2" data-toggle="tooltip" data-placement="top" title="Detail">
                                             <i class="fa-solid fa-eye text-white"></i>
                                         </button>

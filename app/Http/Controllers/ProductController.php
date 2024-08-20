@@ -47,7 +47,9 @@ class ProductController extends Controller
 
     //car product list
     public function carProduct(){
-        $carlist=Product::get();
+        $carlist=Product::select('products.*','categories.name as brand_name')
+        ->leftJoin('categories','products.brand_id','categories.id')
+        ->get();
         return view('admin.product.carProduct',compact('carlist'));
     }
 
@@ -70,6 +72,15 @@ class ProductController extends Controller
         ];
 
         Validator::make($request->all(),$data)->validate();
+    }
+
+    //car detail product
+    public function detailProduct($id){
+        $detail=Product::select('products.*','categories.name as brand_name')
+        ->leftJoin('categories','products.id','categories.id')
+        ->where('products.id',$id)
+        ->first();
+        return view('admin.product.detailProduct',compact('detail'));
     }
 
 }

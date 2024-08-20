@@ -53,6 +53,7 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
             Route::get('/createProductPage',[ProductController::class,'createProductPage'])->name('admin#createProductPage');
             Route::post('/createProduct',[ProductController::class,'createProduct'])->name('admin#createProduct');
             Route::get('/carProduct',[ProductController::class,'carProduct'])->name('admin#carProduct');
+            Route::get('/detailProduct/{id}',[ProductController::class,'detailProduct'])->name('admin#detailProduct');
         });
     });
 });
