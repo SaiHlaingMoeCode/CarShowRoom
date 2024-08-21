@@ -1,6 +1,6 @@
 @extends('admin.layout.master')
 
-@section('title','Car Detail Product')
+@section('title','Car Product Detail')
 
 @section('content')
 
@@ -8,8 +8,19 @@
 <div class="container-fluid">
     <h4>{{ now()->toFormattedDayDateString(); }}</h4>
     <div class="container mt-5">
-        <div class="mb-3 btn bg-secondary">
-            <a href="{{route('admin#carProduct')}}" class="text-decoration-none text-white">Back</a></div>
+        <div class="row d-flex">
+            <div class="mb-3 btn bg-secondary ml-2 ">
+                <a href="{{route('admin#carProduct')}}" class="text-decoration-none text-white">Back</a>
+            </div>
+            @if (session('updateSuccess'))
+            <div class="col-6 offset-6">
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <i class="fa-solid fa-check mr-3"></i> {{ session('updateSuccess') }}
+                    <a type="" class="btn-close ml-3" data-bs-dismiss="alert" aria-label="Close"><i class="fa-regular fa-circle-xmark"></i></a>
+                  </div>
+            </div>
+        @endif
+        </div>
         <div class="row">
             <div class="col-md-6">
                 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">

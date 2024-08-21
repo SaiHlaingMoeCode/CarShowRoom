@@ -83,4 +83,56 @@ class ProductController extends Controller
         return view('admin.product.detailProduct',compact('detail'));
     }
 
+    //car product edit
+    public function editProduct($id){
+        $brandName= Category::select('id', 'name')->get();
+        $detail=Product::where('id',$id)->first();
+        return view('admin.product.editProduct',compact('detail','brandName'));
+    }
+
+    //car product update
+    public function updateProduct(Request $request){
+        $this->validationUpdateCheck($request);
+        $data=$this->updateData($request);
+        Product::where('id',$request->carId)->update($data);
+        return redirect()->route('admin#detailProduct',$request->carId)->with(['updateSuccess'=>'Updated Successfully!']);
+    }
+
+     //car product delete
+     public function deleteProduct($id){
+        Product::where('id',$id)->delete();
+        return redirect()->route('admin#carProduct')->with(['deleteSuccess'=>'Deleted Successfully!']);
+    }
+
+    //validation update check
+    private function validationUpdateCheck(Request $request)
+    {
+        $data = [
+            'price' => 'required',
+            'description' => 'required',
+            'fuelType' => 'required',
+            'engineType' => 'required',
+            'transmission' => 'required',
+            'seatingCapacity' => 'required',
+
+        ];
+
+        Validator::make($request->all(),$data)->validate();
+    }
+
+    //car update data
+    private function updateData(Request $request){
+        return[
+           'id'=>$request->carId,
+            'price'=>$request->price,
+            'description'=>$request->description,
+            'fuel_type'=>$request->fuelType,
+            'engine_type'=>$request->engineType,
+            'transmission'=>$request->transmission,
+            'seating_capacity'=>$request->seatingCapacity,
+        ];
+    }
+
+
+
 }
