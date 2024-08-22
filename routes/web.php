@@ -58,5 +58,12 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
             Route::post('/updateProduct',[ProductController::class,'updateProduct'])->name('admin#updateProduct');
             Route::get('/deteteProduct/{id}',[ProductController::class,'deleteProduct'])->name('admin#deleteProduct');
         });
+
+         //admin profile
+         Route::group(['prefix'=>'profile'],function(){
+             Route::get('/profilePage',[AdminController::class,'profile'])->name('admin#profile');
+             Route::get('/editProfilePage',[AdminController::class,'editProfilePage'])->name('admim#editProfilePage');
+             Route::post('/updateProfile',[AdminController::class,'updateProfile'])->name('admin#updateProfile');
+         });
     });
 });
