@@ -10,73 +10,75 @@ use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
-      public function adminPage()
+    public function adminPage()
     {
         $users = User::get();
-        return view('admin.dashboard.dashboardPage',compact('users'));
+        return view('admin.dashboard.dashboardPage', compact('users'));
     }
 
     //profile page
-    public function profile(){
+    public function profile()
+    {
         return view('admin.profile.adminProfile');
     }
 
     //edit profile page
-    public function editProfilePage(){
+    public function editProfilePage()
+    {
         return view('admin.profile.editProfile');
     }
 
     //update profile
-    public function updateProfile(Request $request){
+    public function updateProfile(Request $request)
+    {
         $this->updateProfileValidation($request);
-        User::where('id',$request->userId)->update([
-            'name'=>$request->name,
-            'email'=>$request->email,
+        User::where('id', $request->userId)->update([
+            'name' => $request->name,
+            'email' => $request->email,
         ]);
-        return redirect()->route('admin#profile')->with(['updateSuccess'=>'Updated Successfully!']);
+        return redirect()->route('admin#profile')->with(['updateSuccess' => 'Updated Successfully!']);
     }
 
     //profile update validation
-    private function updateProfileValidation(Request $request){
-        Validator::make($request->all(),[
-           'name'=>'required',
-           'email'=>'required',
+    private function updateProfileValidation(Request $request)
+    {
+        Validator::make($request->all(), [
+            'name' => 'required',
+            'email' => 'required',
         ])->validate();
     }
 
     //admin password page
-    public function adminPasswordPage(){
+    public function adminPasswordPage()
+    {
         return view('admin.password.adminPassword');
     }
 
     //admin password change
-    public function adminPasswordChange(Request $request){
+    public function adminPasswordChange(Request $request)
+    {
         $this->passwordValidationCheck($request);
         $dbHashValue = User::where('id', Auth::id())->value('password');
 
-        if(Hash::check($request->oldPassword,$dbHashValue)){
-           $data=[
-             'password'=>Hash::make($request->newPassword)
-           ];
-           User::where('id',Auth::user()->id)->update($data);
+        if (Hash::check($request->oldPassword, $dbHashValue)) {
+            $data = [
+                'password' => Hash::make($request->newPassword)
+            ];
+            User::where('id', Auth::user()->id)->update($data);
 
-        //  Auth::logout();
-        //  return redirect()->route('auth#loginPage');
-        return back()->with(['updateSuccess'=>'Password Changed Successfully!']);
+            Auth::logout();
+            return redirect()->route('auth#loginPage')->with('status', 'Password Changed Successfully! Please Login With New Password.');
         }
-        return back()->with(['notMatch'=>'Old Password does not match!!']);
+        return back()->with(['notMatch' => 'Old Password does not match!!']);
     }
 
     //password validation check
-    private function passwordValidationCheck(Request $request){
-        Validator::make($request->all(),[
-             'oldPassword'=>'required|min:6',
-             'newPassword'=>'required|min:6',
-             'confirmPassword'=>'required|min:6|same:newPassword',
+    private function passwordValidationCheck(Request $request)
+    {
+        Validator::make($request->all(), [
+            'oldPassword' => 'required|min:6',
+            'newPassword' => 'required|min:6',
+            'confirmPassword' => 'required|min:6|same:newPassword',
         ])->validate();
     }
-
-
-
-
 }
