@@ -16,7 +16,7 @@ Route::get('login-page', [AuthController::class, 'loginPage'])->name('auth#login
 Route::get('register-page', [AuthController::class, 'registerPage'])->name('auth#registerPage');
 
 
-Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->group(function () {
+Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', [AuthController::class, 'dashboard'])->name('dashboard');
 
     // routes for user
@@ -64,6 +64,12 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
              Route::get('/profilePage',[AdminController::class,'profile'])->name('admin#profile');
              Route::get('/editProfilePage',[AdminController::class,'editProfilePage'])->name('admim#editProfilePage');
              Route::post('/updateProfile',[AdminController::class,'updateProfile'])->name('admin#updateProfile');
+         });
+
+         //admin password
+         Route::group(['prefix'=>'password'],function(){
+            Route::get('/adminPassword',[AdminController::class,'adminPasswordPage'])->name('admin#passwordPage');
+            Route::post('/adminPasswordChange',[AdminController::class,'adminPasswordChange'])->name('admin#passwordChange');
          });
     });
 });

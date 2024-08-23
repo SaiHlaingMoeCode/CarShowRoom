@@ -205,7 +205,7 @@
                                 <a class="dropdown-item m-2" href="{{route('admin#profile')}}">
                                     <i class="fa-solid fa-id-card"></i> Profile
                                 </a>
-                                <a class="dropdown-item m-2" href="">
+                                <a class="dropdown-item m-2" href="{{route('admin#passwordPage')}}">
                                     <i class="fa-solid fa-key"></i> Change Password
                                 </a>
 
