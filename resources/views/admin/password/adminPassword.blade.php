@@ -24,7 +24,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="card-title">
-                                    <h4 class="text-center title-2">Password Info</h4>
+                                    <h4 class="text-center">Password Info</h4>
                                 </div>
 
                                 <form action="" method="post" novalidate="novalidate">

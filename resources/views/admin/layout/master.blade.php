@@ -95,8 +95,8 @@
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
 
-                        <a class="collapse-item" href="">Uplode Photo</a>
-                        <a class="collapse-item" href="">Photo List</a>
+                        <a class="collapse-item" href="{{route('admin#uploadImage')}}">Uplode Photo</a>
+                        <a class="collapse-item" href="{{route('admin#imageList')}}">Photo List</a>
 
                     </div>
                 </div>

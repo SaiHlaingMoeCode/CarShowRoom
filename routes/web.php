@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\GuestController;
+use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
 
@@ -70,6 +71,16 @@ Route::middleware(['auth'])->group(function () {
          Route::group(['prefix'=>'password'],function(){
             Route::get('/adminPassword',[AdminController::class,'adminPasswordPage'])->name('admin#passwordPage');
             Route::post('/adminPasswordChange',[AdminController::class,'adminPasswordChange'])->name('admin#passwordChange');
+         });
+
+         //car gallary
+         Route::group(['prefix'=>'gallery'],function(){
+            Route::get('/uploadImage',[GalleryController::class,'uploadImage'])->name('admin#uploadImage');
+            Route::post('/createImage',[GalleryController::class,'createImage'])->name('admin#createImage');
+            Route::get('imageList',[GalleryController::class,'imageList'])->name('admin#imageList');
+            Route::get('deleteImage/{id}',[GalleryController::class,'deleteImage'])->name('admin#deleteImage');
+            Route::get('editImage/{id}',[GalleryController::class,'editImage'])->name('admin#editImage');
+            Route::post('updateImage/{id}',[GalleryController::class,'updateImage'])->name('admin#updateImage');
          });
     });
 });

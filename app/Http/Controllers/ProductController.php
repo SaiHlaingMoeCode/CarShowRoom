@@ -52,6 +52,7 @@ class ProductController extends Controller
     {
         $carlist = Product::select('products.*', 'categories.name as brand_name')
             ->leftJoin('categories', 'products.brand_id', 'categories.id')
+            ->orderBy('products.id','asc')
             ->paginate(5);
         return view('admin.product.carProduct', compact('carlist'));
     }
@@ -81,7 +82,7 @@ class ProductController extends Controller
     public function detailProduct($id)
     {
         $detail = Product::select('products.*', 'categories.name as brand_name')
-            ->leftJoin('categories', 'products.id', 'categories.id')
+            ->leftJoin('categories', 'products.brand_id','=', 'categories.id')
             ->where('products.id', $id)
             ->first();
         return view('admin.product.detailProduct', compact('detail'));
