@@ -1,26 +1,26 @@
 @extends('admin.layout.master')
 
-@section('title','dashboard')
+@section('title', 'dashboard')
 
 @section('content')
 
 
-<div class="container-fluid">
-    <h3>{{ now()->toFormattedDayDateString(); }}</h3>
+    <div class="container-fluid">
+        <h3>{{ now()->toFormattedDayDateString() }}</h3>
         <!-- Content Row -->
         <div class="row">
 
 
             <!-- Total Customer Card -->
             {{-- border-left-primary <= color for side bar --}}
-            <div class="col-xl-3 col-md-6 mb-4" >
+            <div class="col-xl-3 col-md-6 mb-4">
                 <div class="card  shadow h-100 py-2" style="background-color: #4B49AC">
-                    <div class="card-body" >
+                    <div class="card-body">
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
                                 <div class="text-xs font-weight-bold text-white text-uppercase mb-1">
                                     Total User</div>
-                                    <div class="h5 mb-0 font-weight-bold text-white">{{ count($users) }}</div>
+                                <div class="h5 mb-0 font-weight-bold text-white">{{ count($users) }}</div>
                             </div>
                             <div class="col-auto">
                                 <i style="color: white;" class="fa-solid fa-users fa-2x"></i>
@@ -58,7 +58,7 @@
                                 </div>
                                 <div class="row no-gutters align-items-center">
                                     <div class="col-auto">
-                                        <div class="h5 mb-0 font-weight-bold text-white">23</div>
+                                        <div class="h5 mb-0 font-weight-bold text-white">{{ count($photos) }}</div>
                                     </div>
 
                                 </div>
@@ -79,7 +79,7 @@
                             <div class="col mr-2">
                                 <div class="text-xs font-weight-bold text-white text-uppercase mb-1">
                                     Total Car Blogs</div>
-                                    <div class="h5 mb-0 font-weight-bold text-white">23</div>
+                                <div class="h5 mb-0 font-weight-bold text-white">23</div>
                             </div>
                             <div class="col-auto">
                                 <i style="color: white;" class="fa-solid fa-file-lines fa-2x"></i>
@@ -96,7 +96,7 @@
                             <div class="col mr-2">
                                 <div class="text-xs font-weight-bold text-white text-uppercase mb-1">
                                     Services Categories</div>
-                                    <div class="h5 mb-0 font-weight-bold text-white">23</div>
+                                <div class="h5 mb-0 font-weight-bold text-white">23</div>
                             </div>
                             <div class="col-auto">
                                 <i style="color: white;" class="fa-solid fa-file-lines fa-2x"></i>

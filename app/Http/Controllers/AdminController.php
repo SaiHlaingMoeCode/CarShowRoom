@@ -3,17 +3,19 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Gallery;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 
 class AdminController extends Controller
 {
     public function adminPage()
     {
         $users = User::get();
-        return view('admin.dashboard.dashboardPage', compact('users'));
+        $photos = Gallery::get();
+        return view('admin.dashboard.dashboardPage', compact('users', 'photos'));
     }
 
     //profile page
