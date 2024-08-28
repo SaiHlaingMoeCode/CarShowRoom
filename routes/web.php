@@ -27,15 +27,18 @@ Route::middleware(['auth'])->group(function () {
         Route::group(['prefix' => 'user'], function () {
 
             Route::get('/homePage', [UserController::class, 'home'])->name('user#home');
-
-            //user profile
-             Route::group(['prefix'=>'profile'],function(){
             Route::get('/profilePage',[UserController::class,'userProfile'])->name('user#profile');
             Route::get('/editProfilePage',[UserController::class,'editProfilePage'])->name('user#editProfilePage');
             Route::post('/updateProfile',[UserController::class,'updateProfile'])->name('user#updateProfile');
-            });
 
         });
+
+          //user profile
+        //   Route::prefix('profile')->group(function(){
+        //     Route::get('/profilePage',[UserController::class,'userProfile'])->name('user#profile');
+        //     Route::get('/editProfilePage',[UserController::class,'editProfilePage'])->name('user#editProfilePage');
+        //     Route::post('/updateProfile',[UserController::class,'updateProfile'])->name('user#updateProfile');
+        //     });
 
 
     });
