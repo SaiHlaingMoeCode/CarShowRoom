@@ -8,6 +8,7 @@ use App\Http\Controllers\GuestController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CustomerController;
 
 //guest routes
 Route::get('/', [GuestController::class, 'guestHomePage'])->name('guest#homePage');
@@ -27,7 +28,16 @@ Route::middleware(['auth'])->group(function () {
 
             Route::get('/homePage', [UserController::class, 'home'])->name('user#home');
 
+            //user profile
+             Route::group(['prefix'=>'profile'],function(){
+            Route::get('/profilePage',[UserController::class,'userProfile'])->name('user#profile');
+            Route::get('/editProfilePage',[UserController::class,'editProfilePage'])->name('user#editProfilePage');
+            Route::post('/updateProfile',[UserController::class,'updateProfile'])->name('user#updateProfile');
+            });
+
         });
+
+
     });
 
     //   routes for admin
@@ -63,7 +73,7 @@ Route::middleware(['auth'])->group(function () {
          //admin profile
          Route::group(['prefix'=>'profile'],function(){
              Route::get('/profilePage',[AdminController::class,'profile'])->name('admin#profile');
-             Route::get('/editProfilePage',[AdminController::class,'editProfilePage'])->name('admim#editProfilePage');
+             Route::get('/editProfilePage',[AdminController::class,'editProfilePage'])->name('admin#editProfilePage');
              Route::post('/updateProfile',[AdminController::class,'updateProfile'])->name('admin#updateProfile');
          });
 
@@ -81,6 +91,14 @@ Route::middleware(['auth'])->group(function () {
             Route::get('deleteImage/{id}',[GalleryController::class,'deleteImage'])->name('admin#deleteImage');
             Route::get('editImage/{id}',[GalleryController::class,'editImage'])->name('admin#editImage');
             Route::post('updateImage/{id}',[GalleryController::class,'updateImage'])->name('admin#updateImage');
+         });
+
+         //user&admin list
+         Route::group(['prefix'=>'customer'],function(){
+            Route::get('/adminList',[CustomerController::class,'adminList'])->name('admin#adminList');
+            Route::get('/userList',[CustomerController::class,'userList'])->name('admin#userList');
+            Route::get('/deleteUser/{id}',[CustomerController::class,'deleteUser'])->name('admin#deleteUser');
+            Route::post('/changeRole/{id}',[CustomerController::class,'changeRole'])->name('admin#changeRole');
          });
     });
 });

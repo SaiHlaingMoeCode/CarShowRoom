@@ -111,8 +111,8 @@
                 <div id="collapseOne" class="collapse" aria-labelledby="headingUtilities"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="">Customer List</a>
-                        <a class="collapse-item" href="">Admin List</a>
+                        <a class="collapse-item" href="{{route('admin#userList')}}">User List</a>
+                        <a class="collapse-item" href="{{route('admin#adminList')}}">Admin List</a>
                     </div>
                 </div>
             </li>

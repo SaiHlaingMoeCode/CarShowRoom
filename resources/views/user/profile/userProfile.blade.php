@@ -30,10 +30,10 @@
         </div>
         <div class="row">
             <div class=" btn bg-secondary my-3 mr-3">
-                <a href="{{route('admin#dashboard')}}" class="text-decoration-none text-white">Back</a>
+                <a href="{{route('user#home')}}" class="text-decoration-none text-white">Back</a>
             </div>
             <div class="mt-3">
-                <a href="{{route('admin#editProfilePage')}}">
+                <a href="{{route('user#editProfilePage')}}">
                     <button class="btn bg-secondary text-white">Edit Profile</button>
                 </a>
             </div>
