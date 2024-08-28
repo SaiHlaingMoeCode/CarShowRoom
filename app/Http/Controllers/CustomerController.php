@@ -25,6 +25,12 @@ class CustomerController extends Controller
         return back()->with(['deleteSuccess'=>' Deleted Successfully.']);
     }
 
+    //change role page
+    public function changeRolePage($id){
+        $data=User::where('id',$id)->first();
+        return view('admin.customer.changeRole',compact('data'));
+    }
+
     //change role
     public function changeRole(Request $request,$id){
         $user = User::find($id);
@@ -32,7 +38,7 @@ class CustomerController extends Controller
             $user->role = $request->role;
             $user->save();
 
-            return back()->with(['changeSuccess'=>'Role updated successfully.']);
+            return redirect()->route('admin#adminList')->with(['changeSuccess'=>'Role updated successfully.']);
         }
     }
 }

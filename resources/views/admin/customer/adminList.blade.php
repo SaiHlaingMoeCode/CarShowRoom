@@ -60,8 +60,8 @@
                                         <td>{{ $list->name }}</td>
                                         <td>{{ $list->email }}</td>
                                         <td>{{ $list->role }}</td>
-                                        <td><a href="" class="btn btn-success">Change Role</a>
-                                            <a href="" class="btn btn-danger">Delete</a>
+                                        <td><a href="{{route('admin#changeRolePage',$list->id)}}" class="btn btn-success">Change Role</a>
+                                            <a href="{{route('admin#deleteUser',$list->id)}}" class="btn btn-danger">Delete</a>
                                         </td>
                                     </tr>
                                 @endif

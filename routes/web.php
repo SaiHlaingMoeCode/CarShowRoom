@@ -101,6 +101,7 @@ Route::middleware(['auth'])->group(function () {
             Route::get('/adminList',[CustomerController::class,'adminList'])->name('admin#adminList');
             Route::get('/userList',[CustomerController::class,'userList'])->name('admin#userList');
             Route::get('/deleteUser/{id}',[CustomerController::class,'deleteUser'])->name('admin#deleteUser');
+            Route::get('/changeRolePage/{id}',[CustomerController::class,'changeRolePage'])->name('admin#changeRolePage');
             Route::post('/changeRole/{id}',[CustomerController::class,'changeRole'])->name('admin#changeRole');
          });
     });
