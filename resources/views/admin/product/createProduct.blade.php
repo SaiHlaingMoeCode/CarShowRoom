@@ -133,13 +133,23 @@
             </div>
 
             <div class="mb-3">
-                <label for="images" class="form-label">Image3</label>
+                <label for="images" class="form-label @error('image3') is-invalid @enderror">Image3</label>
                 <input class="form-control py-1" type="file" name="image3"  >
+                @error('image3')
+                <div class="invalid-feedback">
+                    {{ $message }}
+                </div>
+            @enderror
             </div>
 
             <div class="mb-3">
-                <label for="images" class="form-label">Image4</label>
+                <label for="images" class="form-label @error('image4') is-invalid @enderror">Image4</label>
                 <input class="form-control py-1" type="file" name="image4"  >
+                @error('image4')
+                <div class="invalid-feedback">
+                    {{ $message }}
+                </div>
+            @enderror
             </div>
             <!-- Submit Button -->
             <div class="mb-3">

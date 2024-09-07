@@ -27,7 +27,7 @@
 
             </div>
 
-            <!-- Price -->
+            <!-- model -->
             <div class="mb-3">
                 <label for="model" class="form-label">Model</label>
                 <input type="hidden" value="{{$detail->id}}" name="carId">
@@ -111,7 +111,7 @@
 
             <!-- Submit Button -->
             <div class="mb-3">
-                <button type="submit" class="btn btn-secondary text-white">Update</button>
+                <button type="submit" class="btn btn-info text-white">Update</button>
             </div>
         </form>
     </div>
